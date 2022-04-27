@@ -1,6 +1,6 @@
 enum Gender {
-  MALE
-  FEMALE
+  M
+  F
 }
 type Infos {
   name: String!
@@ -75,4 +75,16 @@ enum TodoStatusEnum {
   IN_PROGRESS
   CANCLED
   DONE
+}
+type Subscription {
+  todo: TodoSubscriptioPayload!
+}
+type TodoSubscriptioPayload {
+  todo: Todo!
+  mutation: MutationOperationType!
+}
+enum MutationOperationType {
+  updated
+  deleted
+  added
 }
